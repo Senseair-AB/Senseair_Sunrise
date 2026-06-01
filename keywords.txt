@@ -1,0 +1,99 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+SunriseError			KEYWORD1
+MeasurementMode			KEYWORD1
+CalCommand			KEYWORD1
+CalStatus			KEYWORD1
+ErrorStatus			KEYWORD1
+RegType				KEYWORD1
+RegDef				KEYWORD1
+SunriseConfiguration		KEYWORD1
+SunriseExtendedConfiguration	KEYWORD1
+SunriseIdentification		KEYWORD1
+SunriseMeasurement		KEYWORD1
+SunriseSingleModeState		KEYWORD1
+SunriseScaleFactor		KEYWORD1
+SunriseFirmwareRevision		KEYWORD1
+SunriseTransport		KEYWORD1
+SunriseModbusTransport		KEYWORD1
+SunriseI2CTransport		KEYWORD1
+S12I2CTransport			KEYWORD1
+SunriseBase			KEYWORD1
+Sunrise				KEYWORD1
+S12				KEYWORD1
+SunriseI2C			KEYWORD1
+SunriseModbus			KEYWORD1
+S12I2C				KEYWORD1
+S12Modbus			KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin				KEYWORD2
+enable				KEYWORD2
+disable				KEYWORD2
+setCommAddress			KEYWORD2
+setSensorConfig			KEYWORD2
+getSensorConfig			KEYWORD2
+setSensorExtendedConfig		KEYWORD2
+getSensorExtendedConfig		KEYWORD2
+getSensorID			KEYWORD2
+setMeasurementMode		KEYWORD2
+initialSingleMeasurement	KEYWORD2
+readSingleMeasurement		KEYWORD2
+readMeasurement			KEYWORD2
+enableABC			KEYWORD2
+disableABC			KEYWORD2
+getABCPeriod			KEYWORD2
+setABCPeriod			KEYWORD2
+getABCTimeFromState		KEYWORD2
+incrementABCTimeInState		KEYWORD2
+enableIIRFilters		KEYWORD2
+disableIIRFilters		KEYWORD2
+enableNRDY			KEYWORD2
+disableNRDY			KEYWORD2
+enableNRDYInverted		KEYWORD2
+disableNRDYInverted		KEYWORD2
+enablePressureComp		KEYWORD2
+disablePressureComp		KEYWORD2
+sendCalibrationCommand		KEYWORD2
+getCalibrationStatus		KEYWORD2
+setCalibrationTarget		KEYWORD2
+setPressureValue		KEYWORD2
+setSensorAddress		KEYWORD2
+getMeasurementCount		KEYWORD2
+resetBySCR			KEYWORD2
+evaluateError			KEYWORD2
+setMeterControl			KEYWORD2
+getMeterControl			KEYWORD2
+isEepromSettled			KEYWORD2
+waitForReady			KEYWORD2
+isValidConfig			KEYWORD2
+enableRDYNOpenDrain		KEYWORD2
+disableRDYNOpenDrain		KEYWORD2
+getScaleFactor			KEYWORD2
+setScaleFactor			KEYWORD2
+getScaledMeasurement		KEYWORD2
+getFirmwareType			KEYWORD2
+getFirmwareRevision		KEYWORD2
+getSensorSerialNumber		KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+SUNRISE_MODBUS_BAUDRATE		LITERAL1
+SUNRISE_I2C_CLOCK_HZ		LITERAL1
+SUNRISE_DEFAULT_COMM_ADDRESS	LITERAL1
+SUNRISE_ANY_COMM_ADDRESS	LITERAL1
+SUNRISE_STABILIZATION_MS	LITERAL1
+SUNRISE_EEPROM_UPDATE_TIME_MS	LITERAL1
+S12_I2C_CLOCK_HZ		LITERAL1
+S12_STABILIZATION_MS		LITERAL1
+S12_EEPROM_UPDATE_TIME_MS	LITERAL1
+S12_CALIBRATION_TIME_SINGLE_MODE_MS	LITERAL1
+S12_SINGLE_START_READY_MS	LITERAL1
+S12_FW_TYPE			LITERAL1

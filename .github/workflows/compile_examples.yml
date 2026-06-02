@@ -12,9 +12,11 @@ jobs:
 
     strategy:
       matrix:
-        fqbn:
-          - arduino:avr:mega
-          - arduino:mbed:nano33ble
+        board:
+          - fqbn: arduino:avr:mega
+            artifact-name-suffix: arduino-avr-mega
+          - fqbn: arduino:mbed:nano33ble
+            artifact-name-suffix: arduino-mbed-nano33ble
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -22,7 +24,7 @@ jobs:
         uses: arduino/compile-sketches@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          fqbn: ${{ matrix.fqbn }}
+          fqbn: ${{ matrix.board.fqbn }}
           libraries: |
               # Install the library from the local path.
               - source-path: ./
@@ -36,4 +38,4 @@ jobs:
         with:
           if-no-files-found: error
           path: ${{ env.SKETCHES_REPORTS_PATH }}
-          name: sketches-report-${{ matrix.fqbn }}
+          name: sketches-report-${{ matrix.board.artifact-name-suffix }}

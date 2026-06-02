@@ -1,0 +1,41 @@
+name: Compile Examples
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  compile-examples:
+    runs-on: ubuntu-latest
+    env:
+      SKETCHES_REPORTS_PATH: sketches-reports
+
+    strategy:
+      matrix:
+        board:
+          - fqbn: arduino:avr:mega
+            artifact-name-suffix: arduino-avr-mega
+          - fqbn: arduino:mbed:nano33ble
+            artifact-name-suffix: arduino-mbed-nano33ble
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Compile examples
+        uses: arduino/compile-sketches@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          fqbn: ${{ matrix.board.fqbn }}
+          libraries: |
+              # Install the library from the local path.
+              - source-path: ./
+          sketch-paths: |
+              - examples
+          enable-deltas-report: true
+          sketches-report-path: ${{ env.SKETCHES_REPORTS_PATH }}
+
+      - name: Save sketches report as workflow artifact
+        uses: actions/upload-artifact@v7
+        with:
+          if-no-files-found: error
+          path: ${{ env.SKETCHES_REPORTS_PATH }}
+          name: sketches-report-${{ matrix.board.artifact-name-suffix }}
